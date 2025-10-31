@@ -1,6 +1,13 @@
 # PPG-Based Diabetes Detection using Machine Learning
 
-This project focuses on detecting **diabetes from Photoplethysmography (PPG) signals** using multiple machine learning algorithms. It applies signal preprocessing, feature extraction, and model training to classify whether a subject is diabetic or non-diabetic — aiming for a **non-invasive, low-cost diagnostic approach**.
+This project focuses on detecting **diabetes from Photoplethysmography (PPG) signals** using multiple machine learning algorithms. It applies **signal preprocessing, feature extraction, and model training** to classify whether a subject is diabetic or non-diabetic — aiming for a **non-invasive, low-cost diagnostic approach**.
+
+Beyond offline model development, this project also includes **software integration and real-time model deployment**. The trained machine learning model (XGBoost) was integrated with a **data acquisition system** built using the **MAX30102 PPG sensor** and an **ESP32 microcontroller**.  
+
+The ESP32 captures live PPG signals (infrared and red light waveforms) from the MAX30102 sensor and transmits them to a **Python-based interface** running on a PC. The software then preprocesses the real-time data, extracts relevant features, and uses the **deployed XGBoost model** to predict whether the signal indicates a diabetic or non-diabetic condition.  
+
+This enables a complete **end-to-end smart diagnostic system** — from **hardware signal acquisition** to **machine learning inference** — demonstrating a practical, IoT-based approach for non-invasive diabetes screening.
+
 
 ---
 
