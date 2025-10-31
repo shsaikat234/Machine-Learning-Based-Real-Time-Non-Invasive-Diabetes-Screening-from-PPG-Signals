@@ -30,18 +30,24 @@ These recordings were collected from both **diabetic and non-diabetic subjects**
 
 ## Features Used
 
-From each PPG waveform, several **time-domain** and **frequency-domain** features were extracted, such as:
+From each PPG waveform, **10 key features** were extracted — combining **7 time-domain** and **3 frequency-domain** metrics, consistent with the feature selection approach described in *Papri et al. (2025), Discover Internet of Things*.
 
-- Mean, Standard Deviation, Variance  
-- Skewness, Kurtosis  
-- Heart Rate (HR)  
-- Peak-to-Peak Interval  
-- Signal Entropy  
-- Energy and Power Spectral Density (PSD)
+### Time-Domain Features (7)
+1. Mean  
+2. Standard Deviation (STD)  
+3. Variance  
+4. Skewness  
+5. Kurtosis  
+6. Root Mean Square (RMS)  
+7. Peak-to-Peak Interval (PPI)
 
-These features were used to train multiple machine learning classifiers.
+### Frequency-Domain Features (3)
+8. Signal Entropy  
+9. Energy  
+10. Power Spectral Density (PSD)
 
----
+These features capture both **morphological and spectral characteristics** of the PPG waveform, enabling the model to effectively discriminate between diabetic and non-diabetic signals.  
+They were used as input to train multiple machine learning classifiers, including Logistic Regression, Random Forest, SVM, KNN, and XGBoost.
 
 ## Machine Learning Models & Results
 
