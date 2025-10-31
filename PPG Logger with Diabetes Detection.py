@@ -1,14 +1,5 @@
 """
-PPG Logger with Diabetes Detection - Fixed Version
-Improvements:
-- Thread-safe data access with locks
-- Fixed recording to capture all samples
-- Comprehensive input validation
-- Better error handling and user feedback
-- Configurable parameters
-- Memory limits for recordings
-- Serial port reconnection logic
-- Performance optimizations
+PPG Logger with Diabetes Detection
 """
 
 import tkinter as tk
@@ -1603,4 +1594,5 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"Application error: {e}")
         import traceback
+
         traceback.print_exc()
