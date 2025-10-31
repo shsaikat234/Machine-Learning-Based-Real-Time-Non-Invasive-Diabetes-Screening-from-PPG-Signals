@@ -13,8 +13,16 @@ This enables a complete **end-to-end smart diagnostic system** — from **hardwa
 
 ## Dataset
 
-The dataset used in this study is the **Mazandaran PPG Diabetes Dataset**, collected from clinical sources in Mazandaran, Iran.  
-It contains PPG signal recordings from both diabetic and healthy individuals.
+Non-invasive monitoring and surveillance methods of blood glucose measurement provide **ease of use** and **reduced risk** compared to traditional invasive methods. One of the most promising techniques is based on **Photoplethysmography (PPG)** signals, which have been widely studied for glucose level estimation.
+
+The dataset used in this study is the **Mazandaran PPG Diabetes Dataset**, developed by the **Digital Systems Research Group** of the **University of Science and Technology of Mazandaran, Behshahr, Iran**.  
+
+This publicly available dataset includes:
+- **67 raw PPG signal recordings**
+- **Sampling frequency:** 2175 Hz  
+- **Labeled attributes:** age, gender, and invasively measured blood glucose level  
+
+These recordings were collected from both **diabetic and non-diabetic subjects**, making the dataset suitable for training and evaluating machine learning algorithms for non-invasive diabetes detection.
 
 **Dataset link:** [Mazandaran PPG Dataset](https://data.mendeley.com/datasets/37pm7jk7jn/2)
 
