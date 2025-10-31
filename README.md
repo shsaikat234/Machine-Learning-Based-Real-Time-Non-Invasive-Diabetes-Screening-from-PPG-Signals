@@ -60,7 +60,7 @@ Other models achieved high training accuracy but failed to generalize well on un
 6. **Result Visualization** – Compared overfitting behavior and visualized XGBoost’s performance.  
 7. **Software Integration & Hardware Data Acquisition** –  
    - Integrated real-time PPG signal acquisition using the **MAX30102 pulse oximeter sensor** connected to an **ESP32 microcontroller**.  
-   - The ESP32 collects live PPG data (IR and Red LED signals) and transmits it via serial or Bluetooth to the **Python/PC interface** for further analysis.  
+   - The ESP32 collects live PPG data (IR and Red LED signals) and transmits it via serial to the **PC interface** for further analysis.  
    - The real-time data is processed to extract features similar to those used in the Mazandaran dataset, allowing **on-device diabetes risk estimation** using the trained XGBoost model.  
 
 ---
@@ -68,7 +68,7 @@ Other models achieved high training accuracy but failed to generalize well on un
 ## Hardware Integration Overview
 
 - **Sensor:** MAX30102 (IR + Red LED for PPG signal acquisition)  
-- **Microcontroller:** ESP32 (Wi-Fi + Bluetooth capable, handles signal collection and transmission)  
+- **Microcontroller:** ESP32 
 - **Communication Interface:** Serial (USB) 
 - **Software Environment:**  
   - Arduino IDE (for ESP32 firmware)  
