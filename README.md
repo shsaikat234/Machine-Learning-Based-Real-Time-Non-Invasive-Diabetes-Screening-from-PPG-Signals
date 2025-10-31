@@ -45,11 +45,28 @@ Other models achieved high training accuracy but failed to generalize well on un
 
 ## Project Workflow
 
-1. **Data Loading and Cleaning** – PPG data loaded from Mazandaran dataset.  
-2. **Feature Extraction** – Computed key time/frequency domain features.  
+1. **Data Loading and Cleaning** – PPG data loaded from the Mazandaran dataset.  
+2. **Feature Extraction** – Computed key time and frequency domain features.  
 3. **Data Normalization** – Scaled features using Min-Max or Standard Scaler.  
-4. **Model Training** – Tested multiple ML classifiers (SVM, RF, XGB, etc.).  
-5. **Performance Evaluation** – Accuracy, confusion matrix, ROC curves.  
-6. **Result Visualization** – Compared overfitting and XGBoost performance.  
+4. **Model Training** – Trained and compared SVM, RF, XGBoost, KNN, and Logistic Regression.  
+5. **Performance Evaluation** – Calculated accuracy, confusion matrix, and ROC curves.  
+6. **Result Visualization** – Compared overfitting behavior and visualized XGBoost’s performance.  
+7. **Software Integration & Hardware Data Acquisition** –  
+   - Integrated real-time PPG signal acquisition using the **MAX30102 pulse oximeter sensor** connected to an **ESP32 microcontroller**.  
+   - The ESP32 collects live PPG data (IR and Red LED signals) and transmits it via serial or Bluetooth to the **Python/PC interface** for further analysis.  
+   - The real-time data is processed to extract features similar to those used in the Mazandaran dataset, allowing **on-device diabetes risk estimation** using the trained XGBoost model.  
+
+---
+
+## Hardware Integration Overview
+
+- **Sensor:** MAX30102 (IR + Red LED for PPG signal acquisition)  
+- **Microcontroller:** ESP32 (Wi-Fi + Bluetooth capable, handles signal collection and transmission)  
+- **Communication Interface:** Serial (USB) 
+- **Software Environment:**  
+  - Arduino IDE (for ESP32 firmware)  
+  - Python / Tkinter GUI (for data logging, visualization, and ML-based classification)  
+
+This integration demonstrates the **real-world application** of the trained model — transforming it into a **smart IoT-based non-invasive diabetes detection system**.
 
 ---
