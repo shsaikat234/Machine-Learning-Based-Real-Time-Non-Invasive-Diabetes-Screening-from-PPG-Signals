@@ -28,14 +28,13 @@ These recordings were collected from both **diabetic and non-diabetic subjects**
 
 ---
 
-## Features Used
 
-## 🧩 Features Used
+##  Features Used
 
 From each PPG waveform and patient metadata, a total of **10 features** were extracted — **7 PPG-derived** and **3 demographic**.  
 These features capture both the **morphological patterns** of the PPG signal and **subject-specific physiological information**, improving model reliability and interpretability.
 
-### 🩸 PPG-Derived Features (7)
+### PPG-Derived Features (7)
 1. **Skewness** – Measures asymmetry of the signal distribution  
 2. **Kurtosis** – Indicates the heaviness of signal tails  
 3. **Mean** – Average amplitude of the PPG waveform  
@@ -52,18 +51,22 @@ These features capture both the **morphological patterns** of the PPG signal and
 These **10 combined features** were used as inputs to train multiple machine learning classifiers, including **Logistic Regression**, **Random Forest**, **Support Vector Machine (SVM)**, **K-Nearest Neighbors (KNN)**, and **XGBoost**.
 
 
-## Machine Learning Models & Results
+## 🤖Machine Learning Models & Results
 
-| Model | Training Accuracy | Testing Accuracy | Observation |
-|--------|--------------------|------------------|--------------|
-| Logistic Regression | 100% | 71% | Overfitted |
-| Random Forest | 100% | 73% | Overfitted |
-| SVM (RBF Kernel) | 100% | 70% | Overfitted |
-| **XGBoost** | **96%** | **86%** | Best-performing model |
-| KNN | 99% | 74% | Slightly overfitted |
+The extracted 10 features were used to train and evaluate multiple machine learning classifiers to identify diabetes presence from PPG signals.  
+Model performance was assessed using separate **training and testing splits**, with accuracy and generalization gap as key indicators.
 
-**XGBoost achieved the best generalization performance** and balanced bias-variance tradeoff, making it the optimal model for this dataset.  
-Other models achieved high training accuracy but failed to generalize well on unseen data, indicating overfitting.
+| Model | Training Accuracy | Testing Accuracy | Train–Test Gap | Observation |
+|--------|--------------------|------------------|----------------|--------------|
+| Logistic Regression | 100.00% | 97.96% | 2.04% | Slight overfitting |
+| Random Forest | 100.00% | 97.96% | 2.04% | Slight overfitting |
+| SVM (RBF Kernel) | 100.00% | 100.00% | 0.00% | Perfect fit (possible overfitting) |
+| Gradient Boosting | 100.00% | 97.96% | 2.04% | Slight overfitting |
+| **XGBoost** | **94.27%** | **87.76%** | **6.52%** | ✅ Best generalization |
+
+### Key Insight:
+- **XGBoost** achieved the best balance between training and testing accuracy, showing strong generalization and robustness.  
+- Other models (especially SVM and ensemble-based ones) achieved nearly perfect training accuracy, indicating **potential overfitting** on the relatively small dataset.
 
 ---
 
