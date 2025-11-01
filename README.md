@@ -30,25 +30,27 @@ These recordings were collected from both **diabetic and non-diabetic subjects**
 
 ## Features Used
 
-From each PPG waveform, **10 key features** were extracted — combining **7 time-domain** and **3 frequency-domain** metrics, consistent with the feature selection approach described in *Papri et al. (2025), Discover Internet of Things*.
+## 🧩 Features Used
 
-### PPG-Derived Features (7)
+From each PPG waveform and patient metadata, a total of **10 features** were extracted — **7 PPG-derived** and **3 demographic**.  
+These features capture both the **morphological patterns** of the PPG signal and **subject-specific physiological information**, improving model reliability and interpretability.
 
-1.Skewness - Asymmetry of signal distribution
-2.Kurtosis - Tail heaviness of distribution
-3.Mean - Average amplitude of PPG signal
-4.STD - Standard deviation (signal variability)
-5.MAD - Mean Absolute Deviation (robust variability measure)
-6.Variance - Squared standard deviation
-7.RMS - Root Mean Square of signal
+### 🩸 PPG-Derived Features (7)
+1. **Skewness** – Measures asymmetry of the signal distribution  
+2. **Kurtosis** – Indicates the heaviness of signal tails  
+3. **Mean** – Average amplitude of the PPG waveform  
+4. **Standard Deviation (STD)** – Quantifies signal variability  
+5. **Mean Absolute Deviation (MAD)** – Robust measure of variability, less sensitive to outliers  
+6. **Variance** – Squared standard deviation (overall dispersion)  
+7. **Root Mean Square (RMS)** – Reflects the signal’s power content  
 
-### Demographic Features (3)
+### 👤 Demographic Features (3)
+8. **Age** – Patient’s age (in years)  
+9. **Body Mass Index (BMI)** – Calculated as weight (kg) / height² (m²)  
+10. **Gender** – Encoded as binary (0 = Male, 1 = Female)
 
-8.Age - Patient age in years
-9.BMI - Body Mass Index (kg/m²)
-10.Gender - Binary (0/1)
+These **10 combined features** were used as inputs to train multiple machine learning classifiers, including **Logistic Regression**, **Random Forest**, **Support Vector Machine (SVM)**, **K-Nearest Neighbors (KNN)**, and **XGBoost**.
 
-They were used as input to train multiple machine learning classifiers, including Logistic Regression, Random Forest, SVM, KNN, and XGBoost.
 
 ## Machine Learning Models & Results
 
